@@ -1,2 +1,16 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+#Load data in a variable df
+df= read.csv("D:/Sparks/Task1.csv", header = TRUE)
+#view data
+df
+#Applying Linear Regression to the model
+model=lm(Scores~Hours, data = df)
+#Checking for Intercepts
+summary(model)
+#To predict the score if a student studies for 9.5 hours/day
+a=data.frame(Hours=9.5)
+#To evalute our prediction
+result=predict(model,a)
+#Final result
+result
